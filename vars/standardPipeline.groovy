@@ -1,5 +1,5 @@
 
-def call(map params){
-    println('name is ' +params.name)
-    println('Value is ' +params.value)
+def call(map config = [:]){
+    println('name is ' +config.name)
+    println('Value is ' +config.value)
 }
