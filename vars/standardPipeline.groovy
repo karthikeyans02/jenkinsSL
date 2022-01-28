@@ -32,7 +32,7 @@ def call(body) {
                     string(defaultValue: '', description: 'Enter an existing HOA JIRA issue (leave it empty to automatically create a new one)', name: 'HOA_TICKET', trim: true),
                     string(defaultValue: "", description: 'Comma Separated Prod Deploy Modes', name: 'PROD_DEPLOY_MODES', trim: false)
             ]
-        properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '90', numToKeepStr: '20')), disableConcurrentBuilds(), parameters(jobParameters), pipelineTriggers(config.periodicTrigger)])
+        // properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '90', numToKeepStr: '20')), disableConcurrentBuilds(), parameters(jobParameters), pipelineTriggers(config.periodicTrigger)])
         def productPath     = params.PRODUCT_PATH
         def buildNumberEx   = params.BUILD_NUMBER
         currentBuild.displayName = buildNumberEx
