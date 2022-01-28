@@ -40,10 +40,11 @@ def call(body) {
             def buildPath   = "workarea/${productPath}/${buildNumberEx}"
             
 
-        //Ends here    
+        //Ends here
+        }
 
             
-            }
+    }
         
 
     stage('New closures'){
