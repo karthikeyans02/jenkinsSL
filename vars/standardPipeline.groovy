@@ -38,6 +38,7 @@ def call(body) {
             def buildNumberEx   = params.BUILD_NUMBER
             currentBuild.displayName = buildNumberEx
             def buildPath   = "workarea/${productPath}/${buildNumberEx}"
+            println("build path: " + buildPath)
             
 
         //Ends here
