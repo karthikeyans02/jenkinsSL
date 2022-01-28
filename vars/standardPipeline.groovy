@@ -24,8 +24,8 @@ def call(body) {
 
     node{
         stage('New closures'){
-            println('name is ' +config.name)
-            println('Value is ' +config.value)
+            println('name is ' +config.Name)
+            println('Value is ' +config.Value)
         }
     }
     
