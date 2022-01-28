@@ -21,6 +21,11 @@ def call(body) {
     body.resolveStrategy = Closure.DELEGATE_FIRST
     body.delegate = config
     body()
+
+    environment {
+        IS_PRODUCTION = 'false'
+    }
+
     
     if (!isProduction {}) {
         node{
