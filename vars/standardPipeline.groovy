@@ -21,30 +21,33 @@ def call(body) {
     body.resolveStrategy = Closure.DELEGATE_FIRST
     body.delegate = config
     body()
-
-    node{
+    
+    if (!isProduction {}) {
+        node{
 
         //Implemention of params
 
-        def jobParameters = [
+            def jobParameters = [
                     string(defaultValue: "", description: 'Product Path', name: 'PRODUCT_PATH', trim: false),
                     string(defaultValue: '', description: 'Build Number', name: 'BUILD_NUMBER', trim: false),
                     string(defaultValue: '', description: 'Enter an existing HOA JIRA issue (leave it empty to automatically create a new one)', name: 'HOA_TICKET', trim: true),
                     string(defaultValue: "", description: 'Comma Separated Prod Deploy Modes', name: 'PROD_DEPLOY_MODES', trim: false)
-            ]
+                ]
         // properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '90', numToKeepStr: '20')), disableConcurrentBuilds(), parameters(jobParameters), pipelineTriggers(config.periodicTrigger)])
-        def productPath     = params.PRODUCT_PATH
-        def buildNumberEx   = params.BUILD_NUMBER
-        currentBuild.displayName = buildNumberEx
-        def buildPath   = "workarea/${productPath}/${buildNumberEx}"
+            def productPath     = params.PRODUCT_PATH
+            def buildNumberEx   = params.BUILD_NUMBER
+            currentBuild.displayName = buildNumberEx
+            def buildPath   = "workarea/${productPath}/${buildNumberEx}"
             
 
         //Ends here    
 
-        stage('New closures'){
-            println('name is ' +config.Name)
-            println('Value is ' +config.Value)
+            
+            }
         }
-    }
+
+    stage('New closures'){
+                println('Name is ' +config.Name)
+                println('Value is ' +config.Value)
     
 }
