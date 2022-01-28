@@ -44,10 +44,11 @@ def call(body) {
 
             
             }
-        }
+        
 
     stage('New closures'){
                 println('Name is ' +config.Name)
                 println('Value is ' +config.Value)
+    }
     
 }
